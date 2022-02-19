@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from cbvApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.GreetingView.as_view(greeting_message="<h1>Hello, World! from Class Based Views AS View.</h1>")),
 ]
